@@ -1,6 +1,7 @@
-DirectionalLight3D
-CollisionShape3D
 MeshInstance3D
+Node3D
+CollisionShape3D
+Area3D
+DirectionalLight3D
 StaticBody3D
 Node
-Node3D
