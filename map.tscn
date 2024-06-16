@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://xmt1tb4g4lcl"]
+[gd_scene load_steps=7 format=3 uid="uid://xijaugvs3w6b"]
 
 [ext_resource type="Texture2D" uid="uid://ixhsbxhm7xun" path="res://assets/textures/water.png" id="1_vmeqe"]
-[ext_resource type="PackedScene" uid="uid://dl7o8pvexbya" path="res://assets/models/mountain1.glb" id="2_5k2qv"]
+[ext_resource type="PackedScene" path="res://assets/models/mountain1.glb" id="2_5k2qv"]
 [ext_resource type="PackedScene" uid="uid://x5xp52u1ttmt" path="res://assets/models/dorito.glb" id="3_35xmu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cc17j"]

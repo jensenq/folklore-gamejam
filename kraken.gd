@@ -1,15 +1,13 @@
 extends CharacterBody3D
 
-@export var tentacle_scene: PackedScene
+var tentacle_scene = preload("res://tentacle.tscn")
 @export var speed = 14
 var target_velocity = Vector3.ZERO
 
 func attack():
 	var tentacle = tentacle_scene.instantiate()
-	var spawn_location = get_node(".")
-	tentacle.initialize(spawn_location.position)
-	
 	add_child(tentacle)
+	tentacle.top_level = true
 	
 
 func detect_collision():

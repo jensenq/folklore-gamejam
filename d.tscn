@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck44vndxxcdnw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6lhps"]
+
+[node name="d" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6lhps")
