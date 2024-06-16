@@ -17,6 +17,7 @@ transform = Transform3D(0.81116, 0.429467, -0.39696, 0.0522565, 0.622827, 0.7806
 shadow_enabled = true
 
 [node name="ground" type="StaticBody3D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 shape = SubResource("BoxShape3D_bj56f")
@@ -45,9 +46,8 @@ transform = Transform3D(1, -5.2318e-16, 3.02058e-16, 3.02058e-16, 0.866025, 0.5,
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
 offset_left = 576.0
-offset_top = 1.0
 offset_right = 1152.0
-offset_bottom = 649.0
+offset_bottom = 648.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]

@@ -6,7 +6,8 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_ltego"]
 radius = 1.1521
 
-[node name="kraken" type="CharacterBody3D"]
+[node name="kraken" type="CharacterBody3D" groups=["kraken"]]
+collision_mask = 6
 script = ExtResource("1_juglr")
 
 [node name="pivot" type="Node3D" parent="."]
