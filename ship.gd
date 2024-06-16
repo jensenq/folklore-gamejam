@@ -1,10 +1,14 @@
 extends CharacterBody3D
 
-# How fast the player moves in meters per second.
+signal ship_hit
 @export var speed = 14
 
 var target_velocity = Vector3.ZERO
 
+func on_hit():
+	ship_hit.emit()
+	#print("ship hit")
+	
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO

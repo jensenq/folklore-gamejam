@@ -37,7 +37,7 @@ size = Vector2i(576, 648)
 render_target_update_mode = 4
 
 [node name="kraken" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_u5kcx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526307, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
 
 [node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport/kraken"]
 transform = Transform3D(1, -5.2318e-16, 3.02058e-16, 3.02058e-16, 0.866025, 0.5, -5.2318e-16, -0.5, 0.866025, 2.08165e-12, 2, 3)
@@ -56,7 +56,7 @@ size = Vector2i(576, 648)
 render_target_update_mode = 4
 
 [node name="ship" parent="SubViewportContainer2/SubViewport" instance=ExtResource("2_vml35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0263908, 0.566061, -6.05342)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026, 2, -6.053)
 script = ExtResource("3_bldyj")
 
 [node name="Marker3D" type="Marker3D" parent="SubViewportContainer2/SubViewport/ship"]

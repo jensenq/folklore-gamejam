@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-signal hit
 @export var speed = 14
 var target_velocity = Vector3.ZERO
 
@@ -8,17 +7,17 @@ func detect_collision():
 	
 	# Iterate through all collisions that occurred this frame
 	for index in range(get_slide_collision_count()):
-		# We get one of the collisions with the player
+		# We get one of the collisions
 		var collision = get_slide_collision(index)
 
 		# If the collision is with ground
 		if collision.get_collider() == null:
 			continue
 
-		# If the collider is with a mob
+		# If the collider is with the ship
 		if collision.get_collider().is_in_group("ship"):
 			var ship = collision.get_collider()
-			#print("ship and kraken collided")
+			ship.on_hit()
 
 
 func _physics_process(delta):
@@ -48,10 +47,3 @@ func _physics_process(delta):
 	velocity = target_velocity
 	move_and_slide()
 
-func die():
-	hit.emit()
-	queue_free()
-
-func _on_hit_detector_body_entered(body):
-	die()
-	print("ship hit")

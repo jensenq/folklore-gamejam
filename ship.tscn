@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1kj3v6od2p22"]
+[gd_scene load_steps=5 format=3 uid="uid://d1kj3v6od2p22"]
 
 [ext_resource type="Script" path="res://kraken.gd" id="1_juglr"]
 
@@ -8,8 +8,6 @@
 albedo_color = Color(0.647059, 0.309804, 0.00392157, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_emph5"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_mb1y7"]
 
 [node name="ship" type="CharacterBody3D" groups=["ship"]]
 collision_layer = 2
@@ -26,14 +24,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fx232")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_emph5")
-
-[node name="hit_detector" type="Area3D" parent="."]
-collision_layer = 2
-collision_mask = 5
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="hit_detector"]
-transform = Transform3D(1.25, -8.71967e-16, -1.90574e-23, -1.90574e-23, -5.46392e-08, 1.25, -8.71967e-16, -1.25, -5.46392e-08, 0, 0, 0)
-shape = SubResource("CylinderShape3D_mb1y7")
-
-[connection signal="body_entered" from="hit_detector" to="." method="_on_hit_detector_body_entered"]
