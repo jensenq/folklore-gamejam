@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwy64m5beu418"]
+[gd_scene load_steps=5 format=3 uid="uid://dwy64m5beu418"]
 
 [ext_resource type="PackedScene" uid="uid://crstkrr16d30w" path="res://assets/player.glb" id="1_b230b"]
 [ext_resource type="Script" path="res://kraken.gd" id="1_juglr"]
+[ext_resource type="PackedScene" uid="uid://bl556mcag0whk" path="res://tentacle.tscn" id="2_r5qe6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ltego"]
 radius = 1.1521
@@ -10,6 +11,7 @@ radius = 1.1521
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.825524, 0)
 collision_mask = 6
 script = ExtResource("1_juglr")
+tentacle_scene = ExtResource("2_r5qe6")
 
 [node name="pivot" type="Node3D" parent="."]
 

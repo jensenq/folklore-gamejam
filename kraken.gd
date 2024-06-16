@@ -1,7 +1,14 @@
 extends CharacterBody3D
 
+@export var tentacle_scene: PackedScene
 @export var speed = 14
 var target_velocity = Vector3.ZERO
+
+func attack():
+	var tentacle = tentacle_scene.instantiate()
+	var spawn_location = get_node(".")
+	add_child(tentacle)
+	
 
 func detect_collision():
 	
@@ -34,6 +41,8 @@ func _physics_process(delta):
 		direction.z += 1
 	if Input.is_action_pressed("p1_forward"):
 		direction.z -= 1
+	if Input.is_action_pressed("p1_attack"):
+		attack()
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
