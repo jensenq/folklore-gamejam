@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://xmt1tb4g4lcl"]
+[gd_scene load_steps=7 format=3 uid="uid://xmt1tb4g4lcl"]
+
+[ext_resource type="Texture2D" uid="uid://ixhsbxhm7xun" path="res://assets/textures/water.png" id="1_vmeqe"]
+[ext_resource type="PackedScene" uid="uid://dl7o8pvexbya" path="res://assets/models/mountain1.glb" id="2_5k2qv"]
+[ext_resource type="PackedScene" uid="uid://x5xp52u1ttmt" path="res://assets/models/dorito.glb" id="3_35xmu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cc17j"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydql8"]
+albedo_texture = ExtResource("1_vmeqe")
+
 [sub_resource type="BoxMesh" id="BoxMesh_o4wwl"]
-size = Vector3(60, 2, 60)
+size = Vector3(120, 2, 120)
 
 [node name="map" type="Node3D"]
 
@@ -15,8 +22,18 @@ shape = SubResource("BoxShape3D_cc17j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_ydql8")
 mesh = SubResource("BoxMesh_o4wwl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.385954, 0.922518, 0, -0.922518, -0.385954, 0, 9.17651, 0)
 shadow_enabled = true
+
+[node name="mountain1" parent="." instance=ExtResource("2_5k2qv")]
+transform = Transform3D(1, 0, 0, 0, 0.998636, -0.0522139, 0, 0.0522139, 0.998636, -36.1576, -1.60028, 16.6651)
+
+[node name="mountain2" parent="." instance=ExtResource("2_5k2qv")]
+transform = Transform3D(-0.611527, 0, -0.791224, 0, 1, 0, 0.791224, 0, -0.611527, 30.0207, -3, 29.4379)
+
+[node name="dorito" parent="." instance=ExtResource("3_35xmu")]
+transform = Transform3D(1, 0, 0, 0, -0.996723, 0.0808948, 0, -0.0808948, -0.996723, 33.8628, -0.0187378, 0)
