@@ -1,4 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://brvgqyqowu0g8"]
+[gd_scene load_steps=6 format=3 uid="uid://brvgqyqowu0g8"]
+
+[ext_resource type="PackedScene" uid="uid://dwy64m5beu418" path="res://kraken.tscn" id="1_u5kcx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fraax"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yphqg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj56f"]
 size = Vector3(500, 2, 500)
@@ -7,6 +13,17 @@ size = Vector3(500, 2, 500)
 size = Vector3(500, 2, 500)
 
 [node name="main" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 4.3035e-09, 0, 4.3035e-09, 1, 0, 2.54397, -10.7919)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_fraax")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_yphqg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.81116, 0.429467, -0.39696, 0.0522565, 0.622827, 0.780612, 0.582485, -0.653945, 0.48277, -87.6631, 154.927, 95.6845)
@@ -20,3 +37,11 @@ shape = SubResource("BoxShape3D_bj56f")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_l54g4")
+
+[node name="kraken" parent="." instance=ExtResource("1_u5kcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526307, 0)
+
+[node name="cameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.926889, 0.375335, 0, -0.375335, 0.926889, 0.0654345, 4.26847, 4.69766)
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot"]
