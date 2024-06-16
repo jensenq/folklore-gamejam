@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwy64m5beu418"]
+
+[ext_resource type="PackedScene" uid="uid://crstkrr16d30w" path="res://assets/player.glb" id="1_b230b"]
+
+[node name="kraken" type="CharacterBody3D"]
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="player" parent="pivot" instance=ExtResource("1_b230b")]
